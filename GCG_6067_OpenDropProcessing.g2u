@@ -1,0 +1,24 @@
+﻿Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+'DD - 8/7/2020 - Program will launch Drop Processing screen
+
+'Hooks:
+'	15780 - GUI Script 3
+'	15710 - GUI Populate
+v.Local.iret.Declare(Long)
+f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+	f.Intrinsic.Control.Case(15710)
+		v.Passed.000021.Set("Drop Proc")
+	f.Intrinsic.Control.Case(15780)
+		f.Global.General.LaunchMenuTask(872,0,v.Local.iret)
+f.Intrinsic.Control.EndSelect
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$dduncan$}$20200807125847210$}$r0o+00bj735YsiGsQ60YIo/Zb+26OZQGrk0qnnQaLb52txbVG6nmod80e0H3eTIhZ3KEVlDxJhc=
+Program.Sub.Comments.End
